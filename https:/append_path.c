@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-* append_path - adds path to command
+* append_path - path to command
 * @path: path of command
 * @command: user entered command
 *
