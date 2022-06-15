@@ -12,7 +12,7 @@
 #include <time.h>
 #include <stdbool.h>
 
-/* environment variables */
+/* environment  variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
