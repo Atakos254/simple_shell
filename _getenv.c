@@ -1,25 +1,26 @@
 #include "shell.h"
-
 /**
- * _getenv - retrieves env variable that matches input string
- * @input: input string
- * @environ: local environmental variables
- * Return: string of env variable
+ * _getenv - gets env of input
+ * @env: input
+ * Return: env without =
  */
-char *_getenv(char *input, char **environ)
+char *_getenv(char *env)
 {
-	register int i = 0;
-	char *tok, *right;
+	int i = 0, n = 0;
+	char *temp, *res;
 
-	while (environ[i])
+	while (environ[i] != NULL)
 	{
-		tok = _strtok(environ[i], "=");
-		if (_strcmp(tok, input) == 0)
-		{
-			right = _strtok(NULL, "=");
-			return (right);
-		}
+		if (_strcmp(environ[i], env) == 0)
+			temp = environ[i];
 		i++;
 	}
-	return (NULL);
+
+	while (temp[n] != '\0')
+	{
+		if (_strcmp(temp, env) == 0)
+			res = _strstr(temp, "/");
+		n++;
+	}
+	return (res);
 }

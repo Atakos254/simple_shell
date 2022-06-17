@@ -1,38 +1,20 @@
 #include "shell.h"
 
 /**
- * main - entry point for application
- * @ac: argument count
- * @av: argument vector
- * Return: 0 on success
+ * main - Entry point for shell, handles args to shell
+ * @ac: Arg count
+ * @av: Arr of args
+ * @env: Environment
+ * Return: 0;
  */
-int main(int ac, char **av)
+int main(int ac, char **av, char **env)
 {
-	config build;
-
-	(void)ac;
-	signal(SIGINT, sigintHandler);
-	configInit(&build);
-	build.shellName = av[0];
-	shell(&build);
+	if (!ac)
+		(void)ac;
+	if (!av)
+		(void)av;
+	if (!env)
+		(void)env;
+	shell(ac, av, env);
 	return (0);
-}
-
-/**
- * configInit - initialize member values for config struct
- * @build: input build
- * Return: build with initialized members
- */
-config *configInit(config *build)
-{
-	build->env = generateLinkedList(environ);
-	build->envList = NULL;
-	build->args = NULL;
-	build->buffer = NULL;
-	build->path = _getenv("PATH", environ);
-	build->fullPath = NULL;
-	build->lineCounter = 0;
-	build->shellName = NULL;
-	build->errorStatus = 0;
-	return (build);
 }
