@@ -1,3 +1,8 @@
-C - Simple Shell
+0x16. C - Simple Shell
 
-This project is an implementation of the simple shell final project coded with c
+0. Betty would be proud
+1. Simple shell 0.1
+2. Simple shell 0.2
+2. Simple shell 0.2
+4. Simple shell 0.4
+5. Simple shell 1.0
